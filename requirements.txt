@@ -1,0 +1,24 @@
+# Databricks AI/BI Dashboard Requirements
+# This file lists the Python packages required for the dashboard notebooks
+
+# Data Processing
+pandas>=1.5.0
+numpy>=1.21.0
+pyspark>=3.3.0
+
+# Visualization
+matplotlib>=3.5.0
+seaborn>=0.11.0
+plotly>=5.10.0
+
+# Database Connectivity (if using external connections)
+sqlalchemy>=1.4.0
+pymysql>=1.0.0
+psycopg2-binary>=2.9.0
+
+# Utilities
+python-dateutil>=2.8.0
+pytz>=2022.1
+
+# Note: These packages are typically pre-installed in Databricks runtime
+# This file is provided for reference and local development environments

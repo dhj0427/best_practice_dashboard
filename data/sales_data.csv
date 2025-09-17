@@ -1,0 +1,21 @@
+date,region,product_category,sales_amount,units_sold,customer_id
+2024-01-01,North America,Electronics,1250.99,5,CUST001
+2024-01-01,Europe,Electronics,890.45,3,CUST002
+2024-01-01,Asia,Clothing,456.78,8,CUST003
+2024-01-02,North America,Clothing,678.90,12,CUST004
+2024-01-02,Europe,Home & Garden,1123.45,6,CUST005
+2024-01-02,Asia,Electronics,2345.67,4,CUST006
+2024-01-03,North America,Home & Garden,789.12,9,CUST007
+2024-01-03,Europe,Clothing,567.89,15,CUST008
+2024-01-03,Asia,Electronics,1678.90,7,CUST009
+2024-01-04,North America,Electronics,2234.56,3,CUST010
+2024-01-04,Europe,Electronics,1456.78,8,CUST011
+2024-01-04,Asia,Clothing,345.67,20,CUST012
+2024-01-05,North America,Clothing,890.12,14,CUST013
+2024-01-05,Europe,Home & Garden,1567.89,5,CUST014
+2024-01-05,Asia,Electronics,2890.45,6,CUST015
+2024-01-06,North America,Home & Garden,678.90,11,CUST016
+2024-01-06,Europe,Clothing,1234.56,16,CUST017
+2024-01-06,Asia,Electronics,1890.12,9,CUST018
+2024-01-07,North America,Electronics,3456.78,4,CUST019
+2024-01-07,Europe,Electronics,2123.45,7,CUST020

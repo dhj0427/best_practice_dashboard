@@ -1,0 +1,21 @@
+customer_id,customer_name,age,gender,location,signup_date,subscription_tier
+CUST001,John Smith,35,M,New York,2023-06-15,Premium
+CUST002,Emma Johnson,28,F,London,2023-07-22,Standard
+CUST003,Hiroshi Tanaka,42,M,Tokyo,2023-05-10,Premium
+CUST004,Sarah Wilson,31,F,Chicago,2023-08-05,Basic
+CUST005,Pierre Dubois,39,M,Paris,2023-04-18,Standard
+CUST006,Li Wei,33,M,Shanghai,2023-09-12,Premium
+CUST007,Maria Garcia,27,F,Los Angeles,2023-03-28,Basic
+CUST008,Klaus Mueller,45,M,Berlin,2023-10-03,Standard
+CUST009,Yuki Sato,29,F,Osaka,2023-02-14,Premium
+CUST010,David Brown,36,M,Toronto,2023-11-08,Basic
+CUST011,Sophie Martin,32,F,Lyon,2023-01-25,Standard
+CUST012,Chen Ming,38,M,Beijing,2023-12-01,Premium
+CUST013,Jennifer Davis,26,F,Miami,2024-01-15,Basic
+CUST014,Antonio Rossi,41,M,Rome,2023-07-30,Standard
+CUST015,Akiko Yamamoto,34,F,Kyoto,2023-06-08,Premium
+CUST016,Michael Taylor,43,M,Seattle,2023-05-22,Basic
+CUST017,Isabelle Lefevre,30,F,Marseille,2023-08-16,Standard
+CUST018,Wang Jian,37,M,Guangzhou,2023-04-05,Premium
+CUST019,Lisa Anderson,25,F,Boston,2023-09-28,Basic
+CUST020,Hans Schmidt,40,M,Munich,2023-03-11,Standard

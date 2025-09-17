@@ -1,0 +1,167 @@
+{
+  "dashboard": {
+    "name": "Sales Analytics Dashboard",
+    "description": "Comprehensive sales performance and customer analytics dashboard",
+    "version": "1.0",
+    "tags": ["sales", "analytics", "customer", "revenue"],
+    "refresh_schedule": "hourly",
+    "layout": {
+      "grid_size": 12,
+      "sections": [
+        {
+          "name": "Key Performance Indicators",
+          "type": "kpi_row",
+          "widgets": [
+            {
+              "name": "Total Revenue",
+              "type": "metric",
+              "sql_query": "sql/kpi_overview.sql",
+              "metric": "total_revenue",
+              "format": "currency",
+              "size": {"width": 3, "height": 2}
+            },
+            {
+              "name": "Total Transactions",
+              "type": "metric",
+              "sql_query": "sql/kpi_overview.sql",
+              "metric": "total_transactions",
+              "format": "number",
+              "size": {"width": 3, "height": 2}
+            },
+            {
+              "name": "Total Customers",
+              "type": "metric",
+              "sql_query": "sql/kpi_overview.sql",
+              "metric": "total_customers",
+              "format": "number",
+              "size": {"width": 3, "height": 2}
+            },
+            {
+              "name": "Avg Order Value",
+              "type": "metric",
+              "sql_query": "sql/kpi_overview.sql",
+              "metric": "avg_transaction_value",
+              "format": "currency",
+              "size": {"width": 3, "height": 2}
+            }
+          ]
+        },
+        {
+          "name": "Geographic Analysis",
+          "type": "visualization_row",
+          "widgets": [
+            {
+              "name": "Revenue by Region",
+              "type": "bar_chart",
+              "sql_query": "sql/revenue_by_region.sql",
+              "x_axis": "region",
+              "y_axis": "revenue",
+              "color_by": "region",
+              "size": {"width": 6, "height": 4}
+            },
+            {
+              "name": "Regional Market Share",
+              "type": "pie_chart",
+              "sql_query": "sql/revenue_by_region.sql",
+              "value_field": "revenue",
+              "label_field": "region",
+              "size": {"width": 6, "height": 4}
+            }
+          ]
+        },
+        {
+          "name": "Product Performance",
+          "type": "visualization_row",
+          "widgets": [
+            {
+              "name": "Product Category Revenue",
+              "type": "horizontal_bar_chart",
+              "sql_query": "sql/product_performance.sql",
+              "x_axis": "revenue",
+              "y_axis": "product_category",
+              "color_by": "product_category",
+              "size": {"width": 8, "height": 4}
+            },
+            {
+              "name": "Product Revenue Share",
+              "type": "donut_chart",
+              "sql_query": "sql/product_performance.sql",
+              "value_field": "revenue_share",
+              "label_field": "product_category",
+              "size": {"width": 4, "height": 4}
+            }
+          ]
+        },
+        {
+          "name": "Time Series Analysis",
+          "type": "visualization_row",
+          "widgets": [
+            {
+              "name": "Daily Sales Trend",
+              "type": "line_chart",
+              "sql_query": "sql/sales_trends.sql",
+              "x_axis": "date",
+              "y_axis": ["daily_revenue", "rolling_3day_avg"],
+              "chart_type": "time_series",
+              "size": {"width": 12, "height": 4}
+            }
+          ]
+        },
+        {
+          "name": "Customer Analytics",
+          "type": "visualization_row",
+          "widgets": [
+            {
+              "name": "Customer Segmentation",
+              "type": "heatmap",
+              "sql_query": "sql/customer_segmentation.sql",
+              "x_axis": "age_group",
+              "y_axis": "subscription_tier",
+              "color_by": "total_revenue",
+              "size": {"width": 6, "height": 4}
+            },
+            {
+              "name": "Top Customers",
+              "type": "table",
+              "sql_query": "sql/top_customers.sql",
+              "columns": ["customer_name", "subscription_tier", "lifetime_value", "total_transactions"],
+              "size": {"width": 6, "height": 4}
+            }
+          ]
+        }
+      ]
+    },
+    "filters": [
+      {
+        "name": "date_range",
+        "type": "date_range",
+        "default": "last_30_days",
+        "field": "date"
+      },
+      {
+        "name": "region_filter",
+        "type": "multi_select",
+        "options_query": "SELECT DISTINCT region FROM enriched_sales ORDER BY region",
+        "field": "region"
+      },
+      {
+        "name": "product_category_filter",
+        "type": "multi_select",
+        "options_query": "SELECT DISTINCT product_category FROM enriched_sales ORDER BY product_category",
+        "field": "product_category"
+      },
+      {
+        "name": "subscription_tier_filter",
+        "type": "multi_select",
+        "options_query": "SELECT DISTINCT subscription_tier FROM enriched_sales ORDER BY subscription_tier",
+        "field": "subscription_tier"
+      }
+    ],
+    "parameters": {
+      "auto_refresh": true,
+      "refresh_interval": 300,
+      "cache_duration": 1800,
+      "export_formats": ["pdf", "excel", "csv"]
+    }
+  }
+}
